@@ -6,6 +6,7 @@
     <UseWPF>true</UseWPF>
     <RootNamespace>MoonPdfCore</RootNamespace>
     <AssemblyName>MoonPdfCore</AssemblyName>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <Platforms>x86;x64</Platforms>
   </PropertyGroup>
 
@@ -47,6 +48,9 @@
     <Compile Update="App.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="AssemblyInfo.cs">
+      <SubType>Code</SubType>
     </Compile>
     <Compile Update="GotoPageDialog.xaml.cs">
       <DependentUpon>GotoPageDialog.xaml</DependentUpon>

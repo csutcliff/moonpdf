@@ -6,6 +6,7 @@
     <UseWPF>true</UseWPF>
     <RootNamespace>MoonPdfLibCore</RootNamespace>
     <AssemblyName>MoonPdfLibCore</AssemblyName>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <Platforms>AnyCPU;x64</Platforms>
     <!--<UseWindowsForms>true</UseWindowsForms>-->
   </PropertyGroup>
