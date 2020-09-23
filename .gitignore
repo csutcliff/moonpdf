@@ -1,10 +1,15 @@
 *.suo
 *.user
 bin/MuLib/
+src/.vs/
 src/MoonPdf/bin/
 src/MoonPdf/obj/
 src/MoonPdfLib/bin/
 src/MoonPdfLib/obj/
+src/MoonPdfCore/bin/
+src/MoonPdfCore/obj/
+src/MoonPdfLibCore/bin/
+src/MoonPdfLibCore/obj/
 ext/sumatra/output/
 ext/sumatra/mupdf/generated/
 ext/MouseKeyboardActivityMonitor/bin/

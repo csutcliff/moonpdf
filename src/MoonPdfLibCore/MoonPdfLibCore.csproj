@@ -1,0 +1,75 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>MoonPdfLibCore</RootNamespace>
+    <AssemblyName>MoonPdfLibCore</AssemblyName>
+    <Platforms>AnyCPU;x64</Platforms>
+    <!--<UseWindowsForms>true</UseWindowsForms>-->
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Page Remove="GlobalResources.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\globalmousekeyhook\MouseKeyHook\MouseKeyHook.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="GlobalResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="ContinuousMoonPdfPanel.xaml.cs">
+      <DependentUpon>ContinuousMoonPdfPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="MoonPdfPanel.xaml.cs">
+      <DependentUpon>MoonPdfPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="SinglePageMoonPdfPanel.xaml.cs">
+      <DependentUpon>SinglePageMoonPdfPanel.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="ContinuousMoonPdfPanel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MoonPdfPanel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SinglePageMoonPdfPanel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy $(SolutionDir)..\bin\MuLib\$(PlatformName)\MuPDFLib.dll $(TargetDir) /Y" />
+  </Target>
+</Project>
