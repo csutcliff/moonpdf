@@ -51,7 +51,7 @@ namespace MoonPdfLibCore
             this.source.PreviewMouseWheel += source_PreviewMouseWheel;
             this.source.PreviewMouseLeftButtonDown += source_PreviewMouseLeftButtonDown;
 
-            this.mouseHookListener = Hook.GlobalEvents();
+            this.mouseHookListener = Hook.AppEvents();
             this.mouseHookListener.MouseMove += mouseHookListener_MouseMove;
             this.mouseHookListener.MouseUp += mouseHookListener_MouseUp;
         }
